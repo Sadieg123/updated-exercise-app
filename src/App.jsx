@@ -348,51 +348,254 @@ export default function App() {
 
 // ─── Styles ────────────────────────────────────────────────────────────────────
 const styles = {
+
   app: {
-    background: "#fdf6e3",
+    background: "#f7f7f7",        
     minHeight: "100vh",
     maxWidth: 430,
     margin: "0 auto",
     fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
-    color: "#222",
+    color: "#111",
+
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "20px",
+    boxSizing: "border-box",
   },
 
-  header: { padding: "20px 24px 0", position: "relative" },
-  menuBtn: { background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", gap: 5 },
-  menuLine: { width: 26, height: 2, background: "#222" },
-  dropdown: { position: "absolute", top: 60, left: 24, background: "#fff8e6", border: "1px solid #e0d5b7", borderRadius: 12 },
-  dropItem: { padding: "10px 20px", color: "#555" },
+  header: {
+    padding: "20px 24px 0",
+    position: "relative",
+    width: "100%",
+  },
 
-  welcomeTitle: { textAlign: "center", fontSize: 36, margin: "16px 0" },
+  menuBtn: {
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    display: "flex",
+    flexDirection: "column",
+    gap: 5,
+  },
 
-  searchWrap: { margin: "0 24px", background: "#fff8e6", borderRadius: 50, display: "flex", alignItems: "center", padding: "0 16px" },
-  searchInput: { flex: 1, background: "none", border: "none", color: "#222", padding: "14px 0" },
-  searchIcon: { fontSize: 18, color: "#222" },
+  menuLine: {
+    width: 26,
+    height: 2,
+    background: "#111",
+  },
 
-  list: { padding: "20px 24px", display: "flex", flexDirection: "column", gap: 14 },
-  exerciseCard: { background: "#fff8e6", border: "1px solid #e0d5b7", borderRadius: 18, display: "flex", alignItems: "center", padding: "16px 20px", gap: 16, cursor: "pointer" },
-  cardIcon: { width: 52, height: 52, background: "#fff2c7", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24 },
-  cardText: { flex: 1, display: "flex", flexDirection: "column" },
-  cardName: { fontSize: 17, fontWeight: 600, color: "#222" },
-  cardGoal: { fontSize: 14, color: "#555" },
-  chevron: { fontSize: 22, color: "#888" },
+  dropdown: {
+    position: "absolute",
+    top: 60,
+    left: 24,
+    background: "#fff",
+    border: "1px solid #ccc",
+    borderRadius: 12,
+  },
 
-  exerciseScreen: { display: "flex", flexDirection: "column", alignItems: "center", padding: "20px 32px", gap: 20 },
-  exerciseTitle: { fontSize: 32, color: "#222" },
-  progressRing: { position: "relative", width: 180, height: 180 },
-  ringCenter: { position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" },
-  bigCount: { fontSize: 36, fontWeight: 800 },
-  ringLabel: { fontSize: 12, color: "#555" },
-  remainingText: { fontSize: 15, color: "#444" },
+  dropItem: {
+    padding: "10px 20px",
+    color: "#111",
+  },
 
-  btnGroup: { display: "flex", flexDirection: "column", gap: 12, width: "100%" },
-  primaryBtn: { background: "#f57c00", color: "#fff", border: "none", borderRadius: 50, padding: "16px 0", fontSize: 17, fontWeight: 700, cursor: "pointer", width: "100%" },
-  secondaryBtn: { background: "#fff8e6", border: "1px solid #e0d5b7", borderRadius: 50, padding: "14px 0", color: "#222", width: "100%" },
-  ghostBtn: { background: "transparent", border: "none", color: "#555" },
+  welcomeTitle: {
+    textAlign: "center",
+    fontSize: 36,
+    margin: "16px 0",
+  },
 
-  backBtn: { background: "none", border: "none", color: "#888", fontSize: 16, cursor: "pointer", padding: "20px" },
-  weightInputs: { display: "flex", gap: 10, width: "100%" },
-  input: { flex: 1, padding: 12, borderRadius: 10, border: "1px solid #e0d5b7", background: "#fff8e6", color: "#222" },
-  setList: { width: "100%", display: "flex", flexDirection: "column", gap: 10 },
-  setItem: { background: "#fff8e6", padding: 12, borderRadius: 10, border: "1px solid #e0d5b7", color: "#222" },
+  searchWrap: {
+    margin: "10px 24px",
+    background: "#fff",
+    borderRadius: 50,
+    display: "flex",
+    alignItems: "center",
+    padding: "0 16px",
+    border: "1px solid #ccc",
+  },
+
+  searchInput: {
+    flex: 1,
+    background: "none",
+    border: "none",
+    color: "#111",
+    padding: "14px 0",
+  },
+
+  searchIcon: {
+    fontSize: 18,
+  },
+
+  list: {
+    padding: "20px 24px",
+    display: "flex",
+    flexDirection: "column",
+    gap: 14,
+    width: "100%",
+  },
+
+  exerciseCard: {
+    background: "#fff",
+    border: "1px solid #ccc",
+    borderRadius: 18,
+    display: "flex",
+    alignItems: "center",
+    padding: "16px 20px",
+    gap: 16,
+    cursor: "pointer",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+  },
+
+  cardIcon: {
+    width: 52,
+    height: 52,
+    background: "#e8ff3c",
+    borderRadius: 12,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: 24,
+  },
+
+  cardText: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  cardName: {
+    fontSize: 17,
+    fontWeight: 600,
+  },
+
+  cardGoal: {
+    fontSize: 14,
+    color: "#555",
+  },
+
+  chevron: {
+    fontSize: 22,
+    color: "#888",
+  },
+
+  exerciseScreen: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "20px 32px",
+    gap: 20,
+    width: "100%",
+    boxSizing: "border-box",
+  },
+
+  exerciseTitle: {
+    fontSize: 32,
+    color: "#111",
+  },
+
+  progressRing: {
+    position: "relative",
+    width: 180,
+    height: 180,
+  },
+
+  ringCenter: {
+    position: "absolute",
+    inset: 0,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  bigCount: {
+    fontSize: 36,
+    fontWeight: 800,
+    color: "#111",
+  },
+
+  ringLabel: {
+    fontSize: 12,
+    color: "#555",
+  },
+
+  remainingText: {
+    fontSize: 15,
+    color: "#555",
+  },
+
+  btnGroup: {
+    display: "flex",
+    flexDirection: "column",
+    gap: 12,
+    width: "100%",
+  },
+
+  primaryBtn: {
+    background: "#111",
+    color: "#fff",
+    border: "none",
+    borderRadius: 50,
+    padding: "16px 0",
+    fontSize: 17,
+    fontWeight: 700,
+    cursor: "pointer",
+    width: "100%",
+  },
+
+  secondaryBtn: {
+    background: "#fff",
+    border: "1px solid #111",
+    borderRadius: 50,
+    padding: "14px 0",
+    color: "#111",
+    width: "100%",
+  },
+
+  ghostBtn: {
+    background: "transparent",
+    border: "none",
+    color: "#555",
+  },
+
+  backBtn: {
+    background: "none",
+    border: "none",
+    color: "#111",
+    fontSize: 16,
+    cursor: "pointer",
+    padding: "20px",
+  },
+
+  weightInputs: {
+    display: "flex",
+    gap: 10,
+    width: "100%",
+  },
+
+  input: {
+    flex: 1,
+    padding: 12,
+    borderRadius: 10,
+    border: "1px solid #ccc",
+    background: "#fff",
+    color: "#111",
+  },
+
+  setList: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+  },
+
+  setItem: {
+    background: "#fff",
+    padding: 12,
+    borderRadius: 10,
+    border: "1px solid #ccc",
+  }
+
 };
